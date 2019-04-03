@@ -45,13 +45,14 @@ const Button = styled.button`
 `;
 
 const EarlyBirdSubscribe = () => (
+  // <form action="/signup" method="post">
   <StyledForm>
     <StyledLabel>
       Be the first to know about
       <br />
       our global launch 🚀
       <br />
-      <StyledInput placeholder="sarah@email.com" type="email" />
+      <StyledInput placeholder="sarah@email.com" type="email" required />
     </StyledLabel>
     <Button type="submit" value="Submit">
       💡 Subscribe
