@@ -1,6 +1,9 @@
 TODO
 
-\*\*backend
+\*\* frontend
 
 - build custom express server
-- créer controller api & gateway
+
+\*\*backend
+
+- créer controller form api & gateway
