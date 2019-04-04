@@ -1,11 +1,13 @@
 {
-  "name": "server",
+  "name": "backend",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon gateway.js",
-    "build": "next build",
-    "start": "next start",
-    "flow": "flow"
+    "dev": "nodemon gateway.server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "nodemon": "^1.18.10",
+    "isomorphic-unfetch": "^3.0.0"
   },
   "main": "gateway.js",
   "author": "bumpewto",

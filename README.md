@@ -1,3 +1,6 @@
 TODO
 
-- Remove root package.json
+\*\*backend
+
+- build custom express server
+- créer controller api & gateway
