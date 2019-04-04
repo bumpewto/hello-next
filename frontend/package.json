@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "1.0.0",
   "scripts": {
-    "dev": "node server.js",
+    "dev": "nodemon server.js",
     "build": "next build",
     "start": "next start",
     "flow": "flow"
@@ -11,6 +11,7 @@
     "@babel/preset-flow": "^7.0.0",
     "express": "^4.16.4",
     "next": "^8.0.3",
+    "nodemon": "^1.18.10",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "styled-components": "^4.2.0"

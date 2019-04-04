@@ -2,7 +2,7 @@ TODO
 
 \*\* frontend
 
-- build custom express server
+- fix custom express server
 
 \*\*backend
 
