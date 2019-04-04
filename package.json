@@ -4,9 +4,11 @@
   "scripts": {
     "dev-front": "yarn workspace frontend run dev",
     "dev-back": "yarn workspace backend run dev",
-    "start": "concurrently \"yarn run dev-front\" \"yarn run dev-back\""
+    "start": "run-p dev-front dev-back"
   },
-  "dependencies": {},
+  "dependencies": {
+    "yarn-run-all": "3.1.1"
+  },
   "license": "ISC",
   "devDependencies": {},
   "private": true,
