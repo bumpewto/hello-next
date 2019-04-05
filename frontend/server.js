@@ -10,6 +10,7 @@ app.prepare().then(() => {
   const server = express();
 
   server.get("*", (req, res) => {
+    console.log(req.url);
     return handle(req, res);
   });
 

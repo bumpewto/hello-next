@@ -1,50 +1,40 @@
 const express = require("express");
 const fetch = require("isomorphic-unfetch");
+const request = require("request");
 
 const ssrRouter = express.Router();
 const formRouter = express.Router();
 
+const addSubscriber = require("./gateway.controllers");
+const getPage = require("./gateway.controllers");
+
 // Form
 
-formRouter.post("/signup", (req, res) => {
-  const { email } = req.body;
-
-  const data = {
-    email_adress: email,
-    status: subscribed
-  };
-
-  const postData = JSON.stringify(data);
-
-  const options = {
-    url: "https://us17.api.mailchimp.com/3.0/lists/c437870873/members", // mailchimp api
-    method: "POST",
-    headers: {
-      Authorization: `auth ${API_KEY_MAILCHIMP}`
-    },
-    body: postData
-  };
-
-  fetch(options, (err, response, body) => {
-    err
-      ? res.send(false) //res.send('false') ou simplement false
-      : response.statusCode === 200
-      ? res.send(true) // console.log("Succeed !")
-      : res.send(false); //res.send('POST query to the /signup')
-  });
-});
+formRouter.post("/signup", (req, res) => addSubscriber(req, res));
 
 // SSR
 
 ssrRouter.get("*", (req, res) => {
-  res.redirect("../frontend/server.js");
-  // const request = async () => {
-  //   const response = await fetch("../frontend/server.js", req);
-  //   res.send(response);
-  // };
+  const query = async (req, res) => {
+    try {
+      await console.log(req.url);
+      await req
+        .pipe(
+          // fetch(`http://localhost:3001/${req.url}`, {
+          //   method: req.method,
+          //   headers: req.headers
+          // })
+          request(`http://localhost:3001${req.url}`)
+        )
+        .pipe(res);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  // request();
+  query(req, res);
 });
 
-module.exports = formRouter;
-module.exports = ssrRouter;
+module.exports = () => {
+  formRouter, ssrRouter;
+};
