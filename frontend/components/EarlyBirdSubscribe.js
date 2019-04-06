@@ -1,4 +1,6 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import fetch from "isomorphic-unfetch";
 
 const StyledForm = styled.form`
   display: flex;
@@ -44,20 +46,47 @@ const Button = styled.button`
   color: palevioletred;
 `;
 
-const EarlyBirdSubscribe = () => (
-  // <form action="/signup" method="post">
-  <StyledForm>
-    <StyledLabel>
-      Be the first to know about
-      <br />
-      our global launch 🚀
-      <br />
-      <StyledInput placeholder="sarah@email.com" type="email" required />
-    </StyledLabel>
-    <Button type="submit" value="Submit">
-      💡 Subscribe
-    </Button>
-  </StyledForm>
-);
+const EarlyBirdSubscribe = () => {
+  const [value, setValue] = useState("");
+
+  const submitSubscribe = async email => {
+    try {
+      console.log(email);
+
+      // POST data
+
+      const res = await fetch("/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email })
+      });
+      console.log(res.text());
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  return (
+    <StyledForm onSubmit={e => submitSubscribe(value)}>
+      <StyledLabel>
+        Be the first to know about
+        <br />
+        our global launch 🚀
+        <br />
+        <StyledInput
+          placeholder="sarah@email.com"
+          name="email"
+          value={value}
+          onChange={e => setValue(e.target.value)}
+          type="email"
+          required
+        />
+      </StyledLabel>
+      <Button type="submit" value="Submit">
+        💡 Subscribe
+      </Button>
+    </StyledForm>
+  );
+};
 
 export default EarlyBirdSubscribe;

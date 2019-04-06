@@ -11,7 +11,7 @@ function addSubscriber(req, res) {
   const postData = JSON.stringify(data);
 
   const options = {
-    url: "https://us17.api.mailchimp.com/3.0/lists/c437870873/members", // mailchimp api
+    url: "https://us17.api.mailchimp.com/3.0/lists/c437870873/members",
     method: "POST",
     headers: {
       Authorization: `auth ${API_KEY_MAILCHIMP}`
@@ -21,7 +21,7 @@ function addSubscriber(req, res) {
 
   request(options, (err, response, body) => {
     err
-      ? res.send(false) //res.send('false') ou simplement false
+      ? console.log(err)
       : response.statusCode === 200
       ? res.send(true) // console.log("Succeed !")
       : res.send(false); //res.send('POST query to the /signup')
@@ -31,8 +31,8 @@ function addSubscriber(req, res) {
 function getPage(req, res) {
   const query = async (req, res) => {
     try {
-      await console.log(req.url);
       await req.pipe(request(`http://localhost:3001${req.url}`)).pipe(res);
+      console.log(res.status);
     } catch (err) {
       console.log(err);
     }
@@ -41,5 +41,5 @@ function getPage(req, res) {
 }
 
 module.exports = () => {
-  addSubscriber(), getPage();
+  addSubscriber, getPage;
 };
