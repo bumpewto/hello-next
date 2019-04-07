@@ -54,10 +54,6 @@ const EarlyBirdSubscribe = () => {
     e.persist();
     e.preventDefault();
     try {
-      console.log(email);
-
-      // POST data
-
       const res = await fetch("/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -65,15 +61,14 @@ const EarlyBirdSubscribe = () => {
         credentials: "include"
       });
       await console.log(res.statusCode);
-      // await setValue("");
       await setIsSubmitted(true);
     } catch (error) {
       console.error(error);
     }
   };
 
-  if (isSubmitted) {
-    return <div>You're now registered to the mailing list ! 😊</div>;
+  if (!isSubmitted) {
+    return <div>✔️ You're now registered to the mailing list ! 😊</div>;
   }
 
   return (
