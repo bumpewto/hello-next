@@ -26,6 +26,9 @@ body {
   font-kerning: normal;
   text-align: left;
   font-display: fallback;
+  background: linear-gradient(papayawhip, palevioletred);
+  background-repeat: no-repeat;
+
 
 }
 .h1, h2, h3, h4, h5{
@@ -99,12 +102,6 @@ sup {
 }
 sub {
   bottom: -0.25em;
-}
-
-  body {
-    background: linear-gradient(papayawhip, palevioletred);
-    background-repeat: no-repeat;
-  }
-`;
+}`;
 
 export default GlobalStyle;
