@@ -41,8 +41,8 @@ app.post("/signup", (req, res) => {
     err
       ? console.log(err)
       : response.statusCode === 200
-      ? response.send(true) // console.log("Succeed !")
-      : console.log(response.body); //res.send('POST query to the /signup')
+      ? res.sendStatus(response.statusCode)
+      : console.log(response.body);
   });
 });
 
@@ -50,7 +50,6 @@ app.use("/", (req, res) => {
   const query = async (req, res) => {
     try {
       await req.pipe(request(`http://localhost:8000${req.url}`)).pipe(res);
-      // console.log(res.statusCode);
     } catch (err) {
       console.log(err);
     }

@@ -48,8 +48,11 @@ const Button = styled.button`
 
 const EarlyBirdSubscribe = () => {
   const [value, setValue] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const submitSubscribe = async email => {
+  const submitSubscribe = async (e, email) => {
+    e.persist();
+    e.preventDefault();
     try {
       console.log(email);
 
@@ -58,16 +61,23 @@ const EarlyBirdSubscribe = () => {
       const res = await fetch("/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({ email: email }),
+        credentials: "include"
       });
-      console.log(res.text());
+      await console.log(res.statusCode);
+      // await setValue("");
+      await setIsSubmitted(true);
     } catch (error) {
       console.error(error);
     }
   };
 
+  if (isSubmitted) {
+    return <div>You're now registered to the mailing list ! 😊</div>;
+  }
+
   return (
-    <StyledForm onSubmit={e => submitSubscribe(value)}>
+    <StyledForm onSubmit={e => submitSubscribe(e, value)}>
       <StyledLabel>
         Be the first to know about
         <br />
