@@ -1,10 +1,8 @@
 import Head from "next/head";
 import styled from "styled-components";
 
-import Wrapper from "../components/Wrapper";
 import EarlyBirdSubscribe from "../components/EarlyBirdSubscribe";
 
-// remplacer grad par img
 const Hero = styled.div`
   display: flex;
   flex-direction: column;
@@ -20,15 +18,13 @@ const StyledH2 = styled.h2`
 const Index = () => (
   <>
     <Head>
-      <title>AyAyAy</title>
+      <title>Atmo</title>
     </Head>
-    <Wrapper>
-      <Hero>
-        <StyledH2>Get your ish together</StyledH2>
-        <h3>Fast, Fresh, Now</h3>
-        <EarlyBirdSubscribe />
-      </Hero>
-    </Wrapper>
+    <Hero>
+      <StyledH2>Get your ish together</StyledH2>
+      <h3>Fast, Fresh, Now</h3>
+      <EarlyBirdSubscribe />
+    </Hero>
   </>
 );
 export default Index;

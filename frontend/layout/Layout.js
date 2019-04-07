@@ -1,13 +1,7 @@
 import styled from "styled-components";
 
-// import GlobalStyle from "./GlobalStyle";
-import Layout from "./Layout";
 import Header from "./Header";
 import Footer from "./Footer";
-
-const theme = {
-  background: "papayawhip"
-};
 
 const StyledRoot = styled.div`
   position: relative;
@@ -15,12 +9,11 @@ const StyledRoot = styled.div`
   box-sizing: border-box;
 `;
 
-const Wrapper = props => (
+const Layout = props => (
   <StyledRoot>
-    {/* <GlobalStyle /> */}
     <Header />
-    <Layout>{props.children}</Layout>
+    <section>{props.children}</section>
     <Footer />
   </StyledRoot>
 );
-export default Wrapper;
+export default Layout;
