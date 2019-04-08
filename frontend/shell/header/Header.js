@@ -1,21 +1,7 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-//
-// Navigation bar component styling
-//
-
-const Menu = ({ className }) => (
-  <nav className={className}>
-    <Link href="/about">
-      <a>About</a>
-    </Link>
-  </nav>
-);
-
-//
-// Header container styling
-//
+import Menu from "./components/Menu";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -27,6 +13,7 @@ const StyledHeader = styled.header`
   /* background: transparent; */
   background: rgba(255, 239, 213, 0.9);
 `;
+
 const Navbar = styled.div`
   display: flex;
   flex-direction: row;

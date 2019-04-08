@@ -1,19 +1,14 @@
 import styled from "styled-components";
+import Hero from "../components/Hero";
+import Head from "next/head";
 
-import Header from "./Header";
-import Footer from "./Footer";
-
-const StyledRoot = styled.div`
-  position: relative;
-  overflow: auto;
-  box-sizing: border-box;
-`;
-
-const Layout = props => (
-  <StyledRoot>
-    <Header />
-    <section>{props.children}</section>
-    <Footer />
-  </StyledRoot>
+const Layout = ({ title, hero }) => (
+  <>
+    <Head>
+      <title>{title}</title>
+    </Head>
+    <Hero>{hero}</Hero>
+  </>
 );
+
 export default Layout;

@@ -1,6 +1,6 @@
 import App, { Container } from "next/app";
-import Layout from "../layout/Layout";
-import GlobalStyle from "../layout/_styles";
+import Shell from "../shell/Shell";
+import GlobalStyle from "../shell/_styles";
 
 export default class MyApp extends App {
   render() {
@@ -8,9 +8,9 @@ export default class MyApp extends App {
     return (
       <Container>
         <GlobalStyle />
-        <Layout>
+        <Shell>
           <Component {...pageProps} />
-        </Layout>
+        </Shell>
       </Container>
     );
   }

@@ -1,8 +1,5 @@
 import Document, { Head, Main, NextScript } from "next/document";
-// Import styled components ServerStyleSheet
 import { ServerStyleSheet } from "styled-components";
-
-import GlobalStyle from "../layout/_styles";
 
 export default class MyDocument extends Document {
   // Init styled-components
@@ -28,7 +25,6 @@ export default class MyDocument extends Document {
           {this.props.styleTags}
         </Head>
         <body>
-          {/* <GlobalStyle /> */}
           <Main />
           <NextScript />
         </body>

@@ -3,7 +3,10 @@
 A monorepo Next.js web application with custom Express server as an API gateway
 for others backend microservices
 
+## Structure
+
 ## TODO
+
 - :lipstick: upgrade styling
 - :mag: improve SEO
 - :lock: fix security
