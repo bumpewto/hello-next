@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Link from "next/link";
 
 import Menu from "./components/Menu";
+import Anchor from "../../elements/Anchor";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -10,7 +11,6 @@ const StyledHeader = styled.header`
   width: 100%;
 
   height: 3rem;
-  /* background: transparent; */
   background: rgba(255, 239, 213, 0.9);
 `;
 
@@ -35,7 +35,7 @@ const Header = () => (
     <Navbar>
       <StyledH1>
         <Link href="/">
-          <a>Atmo</a>
+          <Anchor>Atmo</Anchor>
         </Link>
       </StyledH1>
       <Menu />

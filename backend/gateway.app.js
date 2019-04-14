@@ -49,7 +49,10 @@ app.post("/signup", (req, res) => {
 app.use("/", (req, res) => {
   const query = async (req, res) => {
     try {
-      await req.pipe(request(`http://localhost:8000${req.url}`)).pipe(res);
+      await req
+        .pipe(request(`http://localhost:8000${req.url}`))
+        .on("error", er => console.log(er))
+        .pipe(res);
     } catch (err) {
       console.log(err);
     }

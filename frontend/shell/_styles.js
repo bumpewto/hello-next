@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import theme from "../styles/_theme";
 
 // Typo rules
 
@@ -15,93 +16,48 @@ html, .root {
 }
 
 body {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
   overflow: auto;
   box-sizing: border-box;
-  width: 100%;
   margin: 0;
   padding: 0;
-  font-kerning: normal;
   text-align: left;
+
+  font-family: ${theme.font.family1};
+  font-size: 1rem;
+  line-height: ${theme.font.lineHeight};
+  font-kerning: normal;
   font-display: fallback;
-  background: linear-gradient(papayawhip, palevioletred);
+  color:${theme.textColor} ;
+
+  background: ${theme.neutral.n05};
   background-repeat: no-repeat;
 
 
 }
 .h1, h2, h3, h4, h5{
-  font-family: 'Proza Libre', sans-serif;
-  font-display: fallback;
+  /* font-family: 'Proza Libre', sans-serif;
+  font-display: fallback; */
 
 }
 h1, .h1 {
   font-size: 3.3125rem;
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
-
-  font-weight:400;
 }
 h2, .h2 {
-  
-
   font-size: 2.25rem;
   line-height: 3rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
 }
 h3, .h3 {
-  
-
   font-size: 1.5rem;
-  line-height: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0rem;
-}
-h4, .h4 {
-  
-
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0rem;
-}
-h5, .h5 {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0rem;
-}
-p, ul, ol, pre, table, blockquote  {
-  margin-top: 0rem;
-  margin-bottom: 1.5rem;
-}
-ul ul, ol ol, ul ol, ol ul {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
 }
 
 /* Let's make sure all's aligned */
 hr, .hr {
-  border: 1px solid;
-  margin: -1px 0;
+  border: ${theme.border};
 }
 a, b, i, strong, em, small, code {
   line-height: 0;
   text-decoration: none;
-  color: black
 }
-sub, sup {
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sup {
-  top: -0.5em;
-}
-sub {
-  bottom: -0.25em;
-}`;
-
+`;
+console.log(theme.textColor);
 export default GlobalStyle;

@@ -1,6 +1,7 @@
-const PrivacyPolicy = () => (
-  <div>
-    <h2>Privacy Policy</h2>
+import Layout from "../layout/Layout";
+
+let PrivacyContent = () => (
+  <>
     <p>
       Your privacy is important to us. It is Atmo's policy to respect your
       privacy regarding any information we may collect from you across our
@@ -41,7 +42,15 @@ const PrivacyPolicy = () => (
       free to contact us.
     </p>
     <p>This policy is effective as of 28 March 2019.</p>
-  </div>
+  </>
+);
+
+const PrivacyPolicy = () => (
+  <Layout
+    title="Privacy Policy"
+    hero={<h2>Privacy Policy</h2>}
+    content={<PrivacyContent />}
+  />
 );
 export default PrivacyPolicy;
 // https://getterms.io/

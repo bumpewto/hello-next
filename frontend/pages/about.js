@@ -1,14 +1,4 @@
-import Head from "next/head";
+import Layout from "../layout/Layout";
 
-const About = () => (
-  <>
-    <Head>
-      <title>About</title>
-    </Head>
-
-    <div>
-      <h2>About Us</h2>
-    </div>
-  </>
-);
+const About = () => <Layout title="About" hero={<h2>About Us</h2>} />;
 export default About;

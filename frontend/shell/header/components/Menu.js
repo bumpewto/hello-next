@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Anchor from "../../../elements/Anchor";
 
 const Menu = () => (
   <nav>
     <Link href="/about">
-      <a>About</a>
+      <Anchor>About</Anchor>
     </Link>
   </nav>
 );

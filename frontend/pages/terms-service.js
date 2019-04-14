@@ -1,6 +1,7 @@
-const TermsOfService = () => (
-  <div>
-    <h2>Atmo Terms of Service</h2>
+import Layout from "../layout/Layout";
+
+const TermsContent = () => (
+  <>
     <h3>1. Terms</h3>
     <p>
       By accessing the website at{" "}
@@ -101,7 +102,14 @@ const TermsOfService = () => (
       with the laws of Delaware and you irrevocably submit to the exclusive
       jurisdiction of the courts in that State or location.
     </p>
-  </div>
+  </>
+);
+const TermsOfService = () => (
+  <Layout
+    title="Terms of Service"
+    hero={<h2>Atmo Terms of Service</h2>}
+    content={<TermsContent />}
+  />
 );
 export default TermsOfService;
 // https://getterms.io/
