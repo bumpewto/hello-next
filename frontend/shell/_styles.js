@@ -8,6 +8,12 @@ const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Proza+Libre:400,400i,500,500i,600,600i,700,700i,800,800i');
 @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i');
 
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url(https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i) format(woff2);
+  font-display: fallback;
+  font-weight: 400;
+}
 html, .root {
   font-size: 16px;
   box-sizing: border-box;
@@ -27,7 +33,7 @@ body {
   line-height: ${theme.font.lineHeight};
   font-kerning: normal;
   font-display: fallback;
-  color:${theme.textColor} ;
+  color: ${theme.textColor};
 
   background: ${theme.neutral.n05};
   background-repeat: no-repeat;
@@ -35,16 +41,13 @@ body {
 
 }
 .h1, h2, h3, h4, h5{
-  /* font-family: 'Proza Libre', sans-serif;
-  font-display: fallback; */
-
+  /* font-family: 'Proza Libre', sans-serif;*/
 }
 h1, .h1 {
   font-size: 3.3125rem;
 }
 h2, .h2 {
   font-size: 2.25rem;
-  line-height: 3rem;
 }
 h3, .h3 {
   font-size: 1.5rem;
@@ -59,5 +62,4 @@ a, b, i, strong, em, small, code {
   text-decoration: none;
 }
 `;
-console.log(theme.textColor);
 export default GlobalStyle;

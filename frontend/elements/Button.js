@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import theme from "../styles/_theme";
 
-const Anchor = styled.a`
+const Button = styled.a`
   text-decoration: none;
   cursor: pointer;
   :hover {
@@ -13,4 +12,4 @@ const Anchor = styled.a`
     transition: background-color ${theme.timing.fast} ease;
   }
 `;
-export default Anchor;
+export default Button;
