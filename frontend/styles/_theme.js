@@ -38,7 +38,8 @@ const theme = {
     lineHeight: "1.5"
   },
 
-  border: "1px solid",
+  borderM: "1px solid",
+  borderL: "1.5px solid",
   borderRadius: "4px",
 
   spacingXS: "0.5rem",

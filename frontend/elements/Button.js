@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Button = styled.Button`
   text-decoration: none;
   min-height: 2rem;
-  margin: ${theme.spacingXS} ${theme.spacingS};
+  padding: ${theme.spacingXS} ${theme.spacingS};
   text-align: center;
   border: ${theme.border};
   border-radius: ${theme.borderRadius};

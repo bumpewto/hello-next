@@ -55,7 +55,7 @@ h3, .h3 {
 
 /* Let's make sure all's aligned */
 hr, .hr {
-  border: ${theme.border};
+  border: ${theme.borderM};
 }
 a, b, i, strong, em, small, code {
   line-height: 0;
