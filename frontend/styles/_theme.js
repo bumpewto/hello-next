@@ -42,12 +42,13 @@ const theme = {
   borderL: "1.5px solid",
   borderRadius: "4px",
 
-  spacingXS: "0.5rem",
-  spacingS: "1rem",
-  spacingM: "1.5rem",
-  spacingL: "2rem",
-  spacingXL: "3rem",
-
+  spacing: {
+    spacingXS: "0.5rem",
+    spacingS: "1rem",
+    M: "1.5rem",
+    L: "2rem",
+    spacingXL: "3rem"
+  },
   // transition :
   timing: {
     none: "none",
