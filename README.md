@@ -21,9 +21,9 @@ Reading top to bottom,
 ```
 pages
   |__ layout
-  |__ ...tba
-  |__ ...tba
+  |__ modules
   |__ components
+  |__ elements
 ```
 
 ---
@@ -31,9 +31,11 @@ pages
 ## TODO
 
 - :lipstick: upgrade styling
+  -- add Image component
+  --update existing components
 - :mag: improve SEO
 - :lock: fix security
 - :building_construction: set subscribing as its own microservice
-- :recycle: refactore custom dependencies
+- :recycle: refactor custom dependencies
 - :see_no_evil: add/update .gitignore
 - :rocket: serverless deployment
