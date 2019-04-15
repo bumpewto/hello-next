@@ -53,13 +53,15 @@ const theme = {
     fast: "250ms",
     base: "500ms",
     slow: "1000ms"
-  }
+  },
 
   //Decisions
   //   interactive-color :
   // background-color :
+  textColor: {}
 };
 
-theme.textColor = theme.neutral.n90;
+theme.textColor.default = theme.neutral.n90;
+theme.textColor.light = theme.neutral.n05;
 
 export default theme;

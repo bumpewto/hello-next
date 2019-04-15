@@ -33,7 +33,7 @@ body {
   line-height: ${theme.font.lineHeight};
   font-kerning: normal;
   font-display: fallback;
-  color: ${theme.textColor};
+  color: ${theme.textColor.default};
 
   background: ${theme.neutral.n05};
   background-repeat: no-repeat;
