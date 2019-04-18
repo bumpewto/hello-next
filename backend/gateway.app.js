@@ -39,14 +39,13 @@ app.post("/signup", (req, res) => {
   const query = async (req, res) => {
     try {
       await request(req, (err, response) => {
-        err
-          ? console.log(err)
-          : response.statusCode === 200
-          ? res.sendStatus(response.statusCode)
-          : (res, response) => {
-              console.log(response.body);
-              return res.sendStatus(response.statusCode);
-            };
+        err ? console.log(err) : res.sendStatus(response.statusCode);
+        // response.statusCode === 200
+        // ? res.sendStatus(response.statusCode)
+        // : (res, response) => {
+        //     console.log(response.body);
+        //     return res.sendStatus(response.statusCode);
+        //   };
       });
     } catch (err) {
       console.log(err);
