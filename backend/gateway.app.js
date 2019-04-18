@@ -36,14 +36,31 @@ app.post("/signup", (req, res) => {
     json: true
   };
   console.log(options);
-
-  request(options, (err, response) => {
-    err
-      ? console.log(err)
-      : response.statusCode === 200
-      ? res.sendStatus(response.statusCode)
-      : console.log(response.body);
-  });
+  const query = async (req, res) => {
+    try {
+      await request(req, (err, response) => {
+        err
+          ? console.log(err)
+          : response.statusCode === 200
+          ? res.sendStatus(response.statusCode)
+          : (res, response) => {
+              console.log(response.body);
+              return res.sendStatus(response.statusCode);
+            };
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  query(options, res);
+  // request(options, (err, response) => {
+  //   err
+  //     ? console.log(err)
+  //     : response.statusCode === 200
+  //     ? res.sendStatus(response.statusCode)
+  //     : console.log(response.body);
+  //   res.sendStatus(response.statusCode);
+  // });
 });
 
 app.use("/", (req, res) => {
