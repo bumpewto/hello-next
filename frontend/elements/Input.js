@@ -5,12 +5,12 @@ const Label = styled.label``;
 
 const Field = styled.input`
   min-height: 2rem;
-  min-width: 12rem;
+  width: 15rem;
   margin-top: ${theme.spacing.M};
   padding: ${theme.spacing.XS} ${theme.spacing.S};
   border: ${theme.borderM} ${theme.neutral.n70};
   border-radius: ${theme.borderRadius};
-  text-align: left;
+  text-align: center;
 
   color: ${theme.neutral.n70};
   background: ${theme.neutral.n05};
@@ -38,7 +38,7 @@ const Div = styled.div`
 const Input = ({ label, ...props }) => (
   <Label>
     <Div> {label}</Div>
-    <Field {...props} />
+    <Field {...props} autocomplete="off" />
   </Label>
 );
 export default Input;
