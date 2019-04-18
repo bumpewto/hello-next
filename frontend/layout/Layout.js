@@ -1,3 +1,4 @@
+// legacy
 import Hero from "../components/Hero";
 import Head from "next/head";
 import SpaceWrapper from "../elements/SpaceWrapper";

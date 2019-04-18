@@ -45,14 +45,20 @@ body {
 }
 h1, .h1 {
   font-size: 3.3125rem;
+  font-weight: 600;
 }
 h2, .h2 {
   font-size: 2.25rem;
+  font-weight: 300;
 }
 h3, .h3 {
   font-size: 1.5rem;
+  font-weight:300;
 }
-
+h4, .h4{
+  font-size: 1.25rem;
+  font-weight: 400;
+}
 /* Let's make sure all's aligned */
 hr, .hr {
   border: ${theme.borderM};

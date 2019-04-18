@@ -15,9 +15,9 @@ export default class MyApp extends App {
           <GlobalStyle />
         </ThemeProvider>
 
-        <Shell>
-          <Component {...pageProps} />
-        </Shell>
+        {/* <Shell> */}
+        <Component {...pageProps} />
+        {/* </Shell> */}
       </Container>
     );
   }

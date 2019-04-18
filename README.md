@@ -31,8 +31,9 @@ pages
 ## TODO
 
 - :lipstick: upgrade styling
+  -- add Icon component
   -- add Image component
-  --update existing components
+  -- ~~update existing components~~
 - :mag: improve SEO
 - :lock: fix security
 - :building_construction: set subscribing as its own microservice

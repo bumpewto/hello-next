@@ -37,17 +37,22 @@ const theme = {
     size: "16px",
     lineHeight: "1.5"
   },
+  h4: {
+    size: "1.25rem",
+    weight: "400"
+  },
 
   borderM: "1px solid",
   borderL: "1.5px solid",
-  borderRadius: "4px",
+  borderRadius: "8px",
 
   spacing: {
-    spacingXS: "0.5rem",
-    spacingS: "1rem",
+    None: "0",
+    XS: "0.5rem",
+    S: "1rem",
     M: "1.5rem",
     L: "2rem",
-    spacingXL: "3rem"
+    XL: "3rem"
   },
   // transition :
   timing: {

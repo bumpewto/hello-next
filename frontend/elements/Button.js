@@ -1,14 +1,19 @@
 import styled from "styled-components";
+import theme from "../styles/_theme";
 
-const Button = styled.Button`
+const Button = styled.button`
+  box-shadow: none;
   text-decoration: none;
   min-height: 2rem;
-  padding: ${theme.spacingXS} ${theme.spacingS};
+  padding: ${theme.spacing.S} ${theme.spacing.M};
   text-align: center;
-  border: ${theme.border};
+  border: ${theme.borderM};
   border-radius: ${theme.borderRadius};
-  color: ${theme.textColor.light};
   background-color: ${theme.primaryGreen.n80};
+
+  font-size: ${theme.h4.size};
+  font-weight: ${theme.h4.weight};
+  color: ${theme.textColor.light};
   cursor: pointer;
 
   :hover {
@@ -16,6 +21,7 @@ const Button = styled.Button`
     transition: background-color ${theme.timing.base} ease;
   }
   :active {
+    outline: 0 !important;
     background-color: ${theme.primaryGreen.n50};
     transition: background-color ${theme.timing.fast} ease;
   }
