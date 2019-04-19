@@ -16,7 +16,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <meta charSet="utf-8" />
+          <meta lang="en-EN" charSet="utf-8" />
           <meta
             name="viewport"
             content="initial-scale=1.0, width=device-width"

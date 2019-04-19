@@ -36,6 +36,7 @@ pages
   -- ~~remove legacy components~~
   -- ~~update existing components~~
 - :mag: improve SEO
+  -- add lazy loading
 - :lock: fix security
   -- add throttling
   -- add reCaptcha

@@ -1,8 +1,9 @@
 import Head from "next/head";
 
-const SEO = () => (
+const SEO = ({ title, description }) => (
   <Head>
-    <meta />
+    <title>{title || "Atmo"}</title>
+    <meta description={description || ""} />
   </Head>
 );
 export default SEO;
