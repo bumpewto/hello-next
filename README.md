@@ -31,12 +31,14 @@ pages
 ## TODO
 
 - :lipstick: upgrade styling
-  -- remove legacy components
   -- add Icon component
   -- add Image component
+  -- ~~remove legacy components~~
   -- ~~update existing components~~
 - :mag: improve SEO
 - :lock: fix security
+  -- add throttling
+  -- add reCaptcha
 - :building_construction: set subscribing as its own microservice
 - :recycle: refactor custom dependencies
 - :see_no_evil: add/update .gitignore
