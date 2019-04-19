@@ -1,3 +1,9 @@
+//
+// 1. /robots.txt gestion des crawlers
+// 2. /signup gestion du form WaitingList
+// 3. / pipe vers Next.js server
+//
+//_________________________________________________
 // Imports
 
 const express = require("express");
@@ -10,6 +16,10 @@ const request = require("request");
 const app = express();
 
 // Middlewares
+app.get("/robots.txt", (req, res) => {
+  res.type("text/plain");
+  res.send("User-agent: *\nCrawl-delay: 60000\nDisallow: /signup");
+});
 
 app.use(bodyParser.json());
 
@@ -22,8 +32,6 @@ app.post("/signup", (req, res) => {
     email_address: email,
     status: "subscribed"
   };
-
-  // const postData = JSON.stringify(data);
 
   const options = {
     url: "https://us17.api.mailchimp.com/3.0/lists/c437870873/members",
@@ -40,26 +48,12 @@ app.post("/signup", (req, res) => {
     try {
       await request(req, (err, response) => {
         err ? console.log(err) : res.sendStatus(response.statusCode);
-        // response.statusCode === 200
-        // ? res.sendStatus(response.statusCode)
-        // : (res, response) => {
-        //     console.log(response.body);
-        //     return res.sendStatus(response.statusCode);
-        //   };
       });
     } catch (err) {
       console.log(err);
     }
   };
   query(options, res);
-  // request(options, (err, response) => {
-  //   err
-  //     ? console.log(err)
-  //     : response.statusCode === 200
-  //     ? res.sendStatus(response.statusCode)
-  //     : console.log(response.body);
-  //   res.sendStatus(response.statusCode);
-  // });
 });
 
 app.use("/", (req, res) => {

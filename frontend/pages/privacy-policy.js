@@ -1,4 +1,6 @@
 import Layout from "../layout/Layout";
+import Head from "next/head";
+import SpaceWrapper from "../elements/SpaceWrapper";
 
 let PrivacyContent = () => (
   <>
@@ -46,11 +48,17 @@ let PrivacyContent = () => (
 );
 
 const PrivacyPolicy = () => (
-  <Layout
-    title="Privacy Policy"
-    hero={<h2>Privacy Policy</h2>}
-    content={<PrivacyContent />}
-  />
+  <>
+    <Head>
+      <title>Privacy Policy</title>
+    </Head>
+    <SpaceWrapper width="M" height="L" css="text-align: center">
+      <h4>Privacy Policy</h4>
+    </SpaceWrapper>
+    <SpaceWrapper width="M" height="L">
+      <PrivacyContent />
+    </SpaceWrapper>
+  </>
 );
 export default PrivacyPolicy;
 // https://getterms.io/

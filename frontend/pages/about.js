@@ -1,4 +1,15 @@
-import Layout from "../layout/Layout";
+import Head from "next/head";
+import SpaceWrapper from "../elements/SpaceWrapper";
 
-const About = () => <Layout title="About" hero={<h2>About Us</h2>} />;
+const About = () => (
+  <>
+    <Head>
+      <title>Atmo - About</title>
+    </Head>
+
+    <SpaceWrapper height="L" width="M">
+      <h4>About Us</h4>
+    </SpaceWrapper>
+  </>
+);
 export default About;

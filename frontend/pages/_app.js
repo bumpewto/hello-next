@@ -1,10 +1,10 @@
 import App, { Container } from "next/app";
 import { ThemeProvider } from "styled-components";
 
-import Shell from "../shell/Shell";
-import GlobalStyle from "../shell/_styles";
+import GlobalStyle from "../styles/_styles";
 
 import theme from "../styles/_theme";
+import Layout from "../modules/Layout";
 
 export default class MyApp extends App {
   render() {
@@ -15,9 +15,9 @@ export default class MyApp extends App {
           <GlobalStyle />
         </ThemeProvider>
 
-        {/* <Shell> */}
-        <Component {...pageProps} />
-        {/* </Shell> */}
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </Container>
     );
   }

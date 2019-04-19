@@ -1,4 +1,5 @@
-import Layout from "../layout/Layout";
+import Head from "next/head";
+import SpaceWrapper from "../elements/SpaceWrapper";
 
 const TermsContent = () => (
   <>
@@ -105,11 +106,17 @@ const TermsContent = () => (
   </>
 );
 const TermsOfService = () => (
-  <Layout
-    title="Terms of Service"
-    hero={<h2>Atmo Terms of Service</h2>}
-    content={<TermsContent />}
-  />
+  <>
+    <Head>
+      <title>Terms of Service</title>
+    </Head>
+    <SpaceWrapper width="M" height="L" css="text-align: center">
+      <h4>Atmo Terms of Service</h4>
+    </SpaceWrapper>
+    <SpaceWrapper width="M" height="L">
+      <TermsContent />
+    </SpaceWrapper>
+  </>
 );
 export default TermsOfService;
 // https://getterms.io/

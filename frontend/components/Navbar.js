@@ -23,7 +23,7 @@ const Navbar = () => (
   <Nav>
     <SpaceWrapper width="S" height="S">
       <Link href="/">
-        <Anchor>Atmo</Anchor>
+        <Anchor css="font-weight: 600">Atmo</Anchor>
       </Link>
     </SpaceWrapper>
     <SpaceWrapper width="S" height="S">
