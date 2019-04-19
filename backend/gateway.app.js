@@ -16,6 +16,7 @@ const request = require("request");
 const app = express();
 
 // Middlewares
+
 app.get("/robots.txt", (req, res) => {
   res.type("text/plain");
   res.send("User-agent: *\nCrawl-delay: 60000\nDisallow: /signup");
