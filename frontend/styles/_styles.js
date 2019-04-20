@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import theme from "../styles/_theme";
+import theme from "./_theme";
 
 // Typo rules
 
@@ -17,8 +17,13 @@ const GlobalStyle = createGlobalStyle`
 html, .root {
   font-size: 16px;
   box-sizing: border-box;
-
-  /* line-height: 1.5; */
+  
+  @media ${theme.device.tablet}{
+    font-size: 18px;
+  }
+  @media ${theme.device.desktop}{
+    font-size: 21px;
+  }
 }
 
 body {
@@ -67,5 +72,6 @@ a, b, i, strong, em, small, code {
   line-height: 0;
   text-decoration: none;
 }
+
 `;
 export default GlobalStyle;

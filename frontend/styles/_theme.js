@@ -54,6 +54,12 @@ const theme = {
     L: "2rem",
     XL: "3rem"
   },
+
+  sizes: {
+    tablet: "600px",
+    desktop: "1200px"
+  },
+
   // transition :
   timing: {
     none: "none",
@@ -65,10 +71,14 @@ const theme = {
   //Decisions
   //   interactive-color :
   // background-color :
-  textColor: {}
+  textColor: {},
+  device: {}
 };
 
 theme.textColor.default = theme.neutral.n90;
 theme.textColor.light = theme.neutral.n05;
+
+theme.device.tablet = `(min-width: ${theme.sizes.tablet})`;
+theme.device.desktop = `(min-width: ${theme.sizes.desktop})`;
 
 export default theme;
