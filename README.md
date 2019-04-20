@@ -31,8 +31,8 @@ pages
 ## TODO
 
 - :lipstick: upgrade styling
-  -- add Icon component
-  -- add Image component
+  -- ~~add Icon component~~
+  -- ~~add Image component~~
   -- ~~remove legacy components~~
   -- ~~update existing components~~
 - :mag: improve SEO
