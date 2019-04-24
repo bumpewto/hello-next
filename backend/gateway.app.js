@@ -9,6 +9,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
+const path = require("path");
 
 // const formRouter = require("./gateway.routes");
 // const ssrRouter = require("./gateway.routes");
@@ -72,3 +73,4 @@ app.use("/", (req, res) => {
 });
 
 module.exports = app;
+// `http://localhost:8000${req.url}`

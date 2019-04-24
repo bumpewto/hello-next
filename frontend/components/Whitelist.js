@@ -28,7 +28,7 @@ const WaitingListForm = ({ label, onSubmit, value, onChange }) => (
     />
     <SpaceWrapper height="M">
       <Button type="submit" value="Submit">
-        💡 Subscribe
+        Subscribe
       </Button>
     </SpaceWrapper>
   </StyledForm>
@@ -72,8 +72,6 @@ const Whitelist = () => {
           label={"Sorry, something went wrong... (ಥ﹏ಥ)\nPlease try again"}
           onSubmit={handleSubmit}
           value={value}
-          // setIsSubmit(false),
-          // setStatus(null),
           onChange={handleChange}
         />
       );
