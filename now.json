@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "nextjs",
+  "builds": [
+    { "src": "frontend/package.json", "use": "@now/next" },
+    { "src": "api/(*).js", "use": "@now/node" }
+  ],
+  "routes": [
+    {
+      "src": "/api",
+      "dest": "/404.html",
+      "status": 404
+    },
+    { "src": "/signup", "methods": ["POST"], "dest": "/api/form/$1" },
+    {
+      "src": "/(*.)",
+      "methods": ["GET"],
+      "headers": { "Cache-Control": "s-maxage=31536000, max-age=0" },
+      "dest": "frontend/$1"
+    }
+  ]
+}

@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "dev-front": "yarn workspace frontend run dev",
-    "dev-back": "yarn workspace backend run dev",
     "start": "yarn dev-front"
   },
   "dependencies": {},
   "license": "ISC",
   "devDependencies": {},
   "private": true,
-  "workspaces": ["api/*", "backend", "frontend"],
+  "workspaces": ["api/*", "frontend"],
   "keywords": [],
   "description": ""
 }
