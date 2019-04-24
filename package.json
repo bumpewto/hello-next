@@ -1,21 +1,16 @@
 {
-  "name": "011-styling",
+  "name": "012-deploy-config",
   "version": "1.0.0",
   "scripts": {
     "dev-front": "yarn workspace frontend run dev",
-    "dev-back": "yarn workspace backend run dev"
+    "dev-back": "yarn workspace backend run dev",
+    "start": "yarn dev-front"
   },
-  "dependencies": {
-    "yarn-run-all": "3.1.1"
-  },
+  "dependencies": {},
   "license": "ISC",
   "devDependencies": {},
   "private": true,
-  "workspaces": [
-    "api/*",
-    "backend",
-    "frontend"
-  ],
+  "workspaces": ["api/*", "backend", "frontend"],
   "keywords": [],
   "description": ""
 }
