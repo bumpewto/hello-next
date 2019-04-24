@@ -1,10 +1,15 @@
-import Wrapper from "../components/Wrapper";
+import Head from "next/head";
+import SpaceWrapper from "../elements/SpaceWrapper";
 
 const About = () => (
-  <Wrapper>
-    <div>
-      <h2>About Us</h2>
-    </div>
-  </Wrapper>
+  <>
+    <Head>
+      <title>Atmo - About</title>
+    </Head>
+
+    <SpaceWrapper height="L" width="M">
+      <h4>About Us</h4>
+    </SpaceWrapper>
+  </>
 );
 export default About;

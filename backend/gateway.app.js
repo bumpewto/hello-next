@@ -1,8 +1,15 @@
+//
+// 1. /robots.txt gestion des crawlers
+// 2. /signup gestion du form WaitingList
+// 3. / pipe vers Next.js server
+//
+//_________________________________________________
 // Imports
 
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
+const path = require("path");
 
 // const formRouter = require("./gateway.routes");
 // const ssrRouter = require("./gateway.routes");
@@ -10,6 +17,11 @@ const request = require("request");
 const app = express();
 
 // Middlewares
+
+app.get("/robots.txt", (req, res) => {
+  res.type("text/plain");
+  res.send("User-agent: *\nCrawl-delay: 60000\nDisallow: /signup");
+});
 
 app.use(bodyParser.json());
 
@@ -23,8 +35,6 @@ app.post("/signup", (req, res) => {
     status: "subscribed"
   };
 
-  // const postData = JSON.stringify(data);
-
   const options = {
     url: "https://us17.api.mailchimp.com/3.0/lists/c437870873/members",
     method: "POST",
@@ -36,20 +46,25 @@ app.post("/signup", (req, res) => {
     json: true
   };
   console.log(options);
-
-  request(options, (err, response) => {
-    err
-      ? console.log(err)
-      : response.statusCode === 200
-      ? res.sendStatus(response.statusCode)
-      : console.log(response.body);
-  });
+  const query = async (req, res) => {
+    try {
+      await request(req, (err, response) => {
+        err ? console.log(err) : res.sendStatus(response.statusCode);
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  query(options, res);
 });
 
 app.use("/", (req, res) => {
   const query = async (req, res) => {
     try {
-      await req.pipe(request(`http://localhost:8000${req.url}`)).pipe(res);
+      await req
+        .pipe(request(`http://localhost:8000${req.url}`))
+        .on("error", er => console.log(er))
+        .pipe(res);
     } catch (err) {
       console.log(err);
     }
@@ -58,3 +73,4 @@ app.use("/", (req, res) => {
 });
 
 module.exports = app;
+// `http://localhost:8000${req.url}`
