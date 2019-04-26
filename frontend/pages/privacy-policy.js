@@ -1,4 +1,3 @@
-import Layout from "../layout/Layout";
 import Head from "next/head";
 import SpaceWrapper from "../elements/SpaceWrapper";
 
