@@ -1,0 +1,23 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "flow": "flow"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "@babel/preset-flow": "^7.0.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "request": "^2.88.0"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-styled-components": "^1.10.0",
+    "flow-bin": "^0.95.1",
+    "nodemon": "^1.18.10"
+  }
+}

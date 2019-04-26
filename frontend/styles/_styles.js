@@ -73,5 +73,8 @@ a, b, i, strong, em, small, code {
   text-decoration: none;
 }
 
+.grecaptcha-badge{
+	visibility: collapse !important;  
+}
 `;
 export default GlobalStyle;

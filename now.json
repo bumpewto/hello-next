@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "alias": "atmologie.com",
+  "name": "atmologie",
+  "builds": [
+    { "src": "frontend/package.json", "use": "@now/next" },
+    { "src": "api/form/*.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/robots.txt", "dest": "frontend/static/robots.txt" },
+    { "src": "/api", "dest": "/404.html", "status": 404 },
+    {
+      "src": "/signup",
+      "methods": ["POST"],
+      "headers": { "x-request-path": "/signup" },
+      "dest": "/api/form/server.js"
+    },
+    {
+      "src": "(.*)",
+      "methods": ["GET"],
+      "headers": {
+        "Cache-Control": "s-maxage=31536000, max-age=0",
+        "x-request-path": "$1"
+      },
+      "dest": "frontend$1"
+    }
+  ],
+  "env": {
+    "GA_TRACKING_ID": "GTM-KCT7GM3",
+    "API_KEY_MAILCHIMP": "@api-key-mailchimp"
+  }
+}

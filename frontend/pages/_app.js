@@ -1,6 +1,5 @@
 import App, { Container } from "next/app";
 import { ThemeProvider } from "styled-components";
-
 import GlobalStyle from "../styles/_styles";
 
 import theme from "../styles/_theme";
