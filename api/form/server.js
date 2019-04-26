@@ -25,7 +25,7 @@ app.post("/signup", (req, res) => {
     url: "https://us17.api.mailchimp.com/3.0/lists/c437870873/members",
     method: "POST",
     headers: {
-      Authorization: `apikey ${process.env.MAILCHIMP_API_KEY}`,
+      Authorization: `apikey ${process.env.API_KEY_MAILCHIMP}`,
       "Content-Type": "application/json"
     },
     body: data,
