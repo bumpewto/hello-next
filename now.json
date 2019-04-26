@@ -23,5 +23,9 @@
       },
       "dest": "frontend$1"
     }
-  ]
+  ],
+  "env": {
+    "GA_TRACKING_ID": "GTM-KCT7GM3",
+    "MAILCHIMP_API_KEY": "@api-key-mailchimp"
+  }
 }
