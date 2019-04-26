@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "alias": ["www.atmologie.com"],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "status": 301,
+      "headers": { "Location": "https://atmologie.com/$1" }
+    }
+  ]
+}
