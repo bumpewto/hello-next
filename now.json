@@ -4,20 +4,24 @@
   "name": "atmologie",
   "builds": [
     { "src": "frontend/package.json", "use": "@now/next" },
-    { "src": "api/(*).js", "use": "@now/node" }
+    { "src": "api/form/*.js", "use": "@now/node" }
   ],
   "routes": [
+    { "src": "/api", "dest": "/404.html", "status": 404 },
     {
-      "src": "/api",
-      "dest": "/404.html",
-      "status": 404
+      "src": "/signup",
+      "methods": ["POST"],
+      "headers": { "x-request-path": "/signup" },
+      "dest": "/api/form/server.js"
     },
-    { "src": "/signup", "methods": ["POST"], "dest": "/api/form/$1" },
     {
-      "src": "/(*.)",
+      "src": "(.*)",
       "methods": ["GET"],
-      "headers": { "Cache-Control": "s-maxage=31536000, max-age=0" },
-      "dest": "frontend/$1"
+      "headers": {
+        "Cache-Control": "s-maxage=31536000, max-age=0",
+        "x-request-path": "$1"
+      },
+      "dest": "frontend$1"
     }
   ]
 }
