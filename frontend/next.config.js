@@ -9,6 +9,8 @@ const withOffline = moduleExists("next-offline") ? require("next-offline") : {};
 const nextConfig = {
   workboxOpts: {
     swDest: "static/service-worker.js",
+    clientsClaim: true,
+    skipWaiting: true,
     // Set Prefix for serving serviceworker.js from /static
     globPatterns: ["frontend/static/**/*"],
     globDirectory: ".",
@@ -16,6 +18,16 @@ const nextConfig = {
       frontend: assetPrefix
     },
     runtimeCaching: [
+      {
+        urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif)/,
+        handler: "cacheFirst",
+        options: {
+          cacheName: "image-cache",
+          cacheableResponse: {
+            statuses: [0, 200]
+          }
+        }
+      },
       {
         urlPattern: /^https?.*/,
         handler: "networkFirst",
