@@ -7,6 +7,14 @@
     { "src": "api/form/*.js", "use": "@now/node" }
   ],
   "routes": [
+    {
+      "src": "^/service-worker.js$",
+      "dest": "/_next/static/service-worker.js",
+      "headers": {
+        "cache-control": "public, max-age=43200, immutable",
+        "Service-Worker-Allowed": "/"
+      }
+    },
     { "src": "/robots.txt", "dest": "frontend/static/robots.txt" },
     { "src": "/api", "dest": "/404.html", "status": 404 },
     {

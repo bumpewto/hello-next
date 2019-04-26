@@ -1,5 +1,5 @@
 {
-  "name": "012-deploy-config",
+  "name": "013-pwa",
   "version": "1.0.0",
   "scripts": {
     "dev-front": "yarn workspace frontend run dev",
@@ -10,7 +10,10 @@
   "license": "ISC",
   "devDependencies": {},
   "private": true,
-  "workspaces": ["api/*", "frontend"],
+  "workspaces": [
+    "api/*",
+    "frontend"
+  ],
   "keywords": [],
   "description": ""
 }
