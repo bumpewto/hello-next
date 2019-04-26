@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev-front": "yarn workspace frontend run dev",
-    "start": "yarn dev-front"
+    "dev-api": "yarn workspace api run start",
+    "start": "yarn dev-front && yarn dev-api"
   },
   "dependencies": {},
   "license": "ISC",
