@@ -1,5 +1,5 @@
 module.exports = {
-  target: "serverless"
+    target: "serverless",
 };
 
 // Serving Service Worker
@@ -7,54 +7,70 @@ module.exports = {
 const withOffline = moduleExists("next-offline") ? require("next-offline") : {};
 
 const nextConfig = {
-  workboxOpts: {
-    swDest: "static/service-worker.js",
-    clientsClaim: true,
-    skipWaiting: true,
-    // Set Prefix for serving serviceworker.js from /static
-    globPatterns: ["frontend/static/**/*"],
-    globDirectory: ".",
-    modifyUrlPrefix: {
-      frontend: assetPrefix
+    workboxOpts: {
+        swDest: "static/service-worker.js",
+        clientsClaim: true,
+        skipWaiting: true,
+        // Set Prefix for serving serviceworker.js from /static
+        globPatterns: ["frontend/static/**/*"],
+        globDirectory: ".",
+        // modifyUrlPrefix: {
+        //     frontend: assetPrefix,
+        // },
+        runtimeCaching: [
+            {
+                urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif)/,
+                handler: "cacheFirst",
+                options: {
+                    cacheName: "image-cache",
+                    cacheableResponse: {
+                        statuses: [0, 200],
+                    },
+                },
+            },
+            {
+                urlPattern: /^https?.*/,
+                handler: "networkFirst",
+                options: {
+                    cacheName: "https-calls",
+                    networkTimeoutSeconds: 15,
+                    expiration: {
+                        maxEntries: 150,
+                        maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
+                    },
+                    cacheableResponse: {
+                        statuses: [0, 200],
+                    },
+                },
+            },
+        ],
     },
-    runtimeCaching: [
-      {
-        urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif)/,
-        handler: "cacheFirst",
-        options: {
-          cacheName: "image-cache",
-          cacheableResponse: {
-            statuses: [0, 200]
-          }
-        }
-      },
-      {
-        urlPattern: /^https?.*/,
-        handler: "networkFirst",
-        options: {
-          cacheName: "https-calls",
-          networkTimeoutSeconds: 15,
-          expiration: {
-            maxEntries: 150,
-            maxAgeSeconds: 30 * 24 * 60 * 60 // 1 month
-          },
-          cacheableResponse: {
-            statuses: [0, 200]
-          }
-        }
-      }
-    ]
-  }
 };
 
-module.exports = moduleExists("next-offline")
-  ? withOffline(nextConfig)
-  : nextConfig;
+module.exports = moduleExists("next-offline") ? withOffline(nextConfig) : nextConfig;
 
 function moduleExists(name) {
-  try {
-    return require.resolve(name);
-  } catch (error) {
-    return false;
-  }
+    try {
+        return require.resolve(name);
+    } catch (error) {
+        return false;
+    }
 }
+
+// Webpack Bundle Analyzer
+const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
+
+module.exports = withBundleAnalyzer({
+    analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
+    analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
+    bundleAnalyzerConfig: {
+        server: {
+            analyzerMode: "static",
+            reportFilename: "../bundles/server.html",
+        },
+        browser: {
+            analyzerMode: "static",
+            reportFilename: "../bundles/client.html",
+        },
+    },
+});
