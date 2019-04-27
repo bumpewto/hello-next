@@ -1,14 +1,16 @@
 import Head from "next/head";
-import Footer from "../components/Footer";
+import dynamic from "next/dynamic";
+// import Footer from "../components/Footer";
+const Footer = dynamic(() => import("../components/Footer"));
 import Navbar from "../components/Navbar";
 
 const Layout = ({ title, children }) => (
-  <>
-    <Head />
-    <Navbar />
-    {children}
-    <Footer />
-  </>
+    <>
+        <Head />
+        <Navbar />
+        {children}
+        <Footer />
+    </>
 );
 
 export default Layout;
