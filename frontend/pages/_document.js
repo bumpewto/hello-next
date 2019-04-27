@@ -5,10 +5,10 @@ import { ServerStyleSheet } from "styled-components";
 // import { RCTag } from "../seo/reCaptcha";
 // import { HeapScript } from "../seo/heap";
 
-const GTagScript = dynamic(import("../seo/gTag"));
-const GTagNoScript = dynamic(import("../seo/gTag"));
-const RCTag = dynamic(import("../seo/reCaptcha"));
-const HeapScript = dynamic(import("../seo/heap"));
+const GTagScript = dynamic(() => import("../seo/gTag").then(mod => mod.GTagScript));
+const GTagNoScript = dynamic(() => import("../seo/gTag").then(mod => mod.GTagNoScript));
+const RCTag = dynamic(() => import("../seo/reCaptcha").then(mod => mod.RCTag));
+const HeapScript = dynamic(() => import("../seo/heap").then(mod => mod.HeapScript));
 
 export default class MyDocument extends Document {
     // Init styled-components
