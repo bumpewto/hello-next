@@ -24,6 +24,7 @@
     "devDependencies": {
         "@zeit/next-bundle-analyzer": "^0.1.2",
         "babel-plugin-styled-components": "^1.10.0",
-        "flow-bin": "^0.95.1"
+        "flow-bin": "^0.95.1",
+        "next-compose-plugins": "^2.2.0"
     }
 }
