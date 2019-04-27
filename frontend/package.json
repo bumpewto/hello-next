@@ -23,7 +23,6 @@
     "license": "ISC",
     "devDependencies": {
         "@zeit/next-bundle-analyzer": "^0.1.2",
-        "babel-cli": "^6.26.0",
         "babel-plugin-styled-components": "^1.10.0",
         "flow-bin": "^0.95.1"
     }

@@ -15,7 +15,6 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-plugin-styled-components": "^1.10.0",
     "flow-bin": "^0.95.1",
     "nodemon": "^1.18.10"
