@@ -3,3 +3,4 @@ README.md
 node_modules
 sandbox.config.json
 .env
+now-secrets.json
