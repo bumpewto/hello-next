@@ -25,6 +25,7 @@ export default class MyDocument extends Document {
                 <Head>
                     <meta lang="en-EN" charSet="utf-8" />
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                    <link rel="manifest" href="./static/manifest.json" />
                     <RCTag />
                     <GTagScript />
                     <HeapScript />
