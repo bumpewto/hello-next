@@ -2,4 +2,3 @@ node_modules
 .next
 .env
 bundles
-now-secrets.json
