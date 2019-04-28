@@ -31,11 +31,11 @@ module.exports = withPlugins(
             {
                 generateInDevMode: true,
                 workboxOpts: {
-                    swDest: "static/sw.js",
+                    swDest: "static/service-worker.js",
+                    importWorkboxFrom: "cdn",
+                    offlineGoogleAnalytics: true,
                     clientsClaim: true,
                     skipWaiting: true,
-                    globPatterns: ["static/**/*"],
-                    globDirectory: ".",
                     runtimeCaching: [
                         {
                             urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif)/,
