@@ -5,6 +5,7 @@ const About = () => (
   <>
     <Head>
       <title>Atmo - About</title>
+      <meta description="" />
     </Head>
 
     <SpaceWrapper height="L" width="M">

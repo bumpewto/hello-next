@@ -1,11 +1,11 @@
 import Hero from "../modules/Hero";
-import Seo from "../seo/Seo";
 
 const Index = () => (
   <>
-    <Seo
-      title="Atmo | Inspiration is vital"
-      description="Receive fresh breeze from the purest places on Earth"
+    <Head>
+      <title>Atmo | Inspiration is vital</title>
+      <meta description="Receive fresh breeze from the purest places on Earth" />
+    </Head>
     />
     <Hero />
   </>
