@@ -1,5 +1,5 @@
 import Hero from "../modules/Hero";
-
+import Head from "next/head";
 const Index = () => (
   <>
     <Head>
