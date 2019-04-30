@@ -4,11 +4,14 @@
   "scripts": {
     "dev-front": "yarn workspace frontend run dev",
     "dev-api": "yarn workspace api run start",
-    "start": "yarn dev-front && yarn dev-api"
+    "start": "yarn dev-front && yarn dev-api",
+    "test": "jest --watchAll"
   },
   "dependencies": {},
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^24.7.1"
+  },
   "private": true,
   "workspaces": [
     "api/*",
