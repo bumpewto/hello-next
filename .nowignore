@@ -4,3 +4,5 @@ node_modules
 sandbox.config.json
 .env
 .test.js
+.eslintrc
+.babelrc
