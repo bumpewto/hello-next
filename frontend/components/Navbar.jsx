@@ -19,16 +19,15 @@ const Nav = styled.nav`
   background: ${theme.neutral.n05};
 `;
 
+const Logo = styled(Anchor)`
+  font-weight: 600;
+`;
+
 const Navbar = () => (
   <Nav>
     <SpaceWrapper width="S" height="S">
       <Link href="/">
-        <Anchor
-          css={`
-            font-weight: 600;
-          `}>
-          Atmo
-        </Anchor>
+        <Logo>Atmo</Logo>
       </Link>
     </SpaceWrapper>
     <SpaceWrapper width="S" height="S">
