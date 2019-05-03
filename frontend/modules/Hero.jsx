@@ -1,3 +1,4 @@
+import { forwardRef, useRef, useImperativeHandle } from "react";
 import { useSpring, animated } from "react-spring";
 import styled, { css } from "styled-components";
 import SpaceWrapper from "../elements/SpaceWrapper";
@@ -28,7 +29,6 @@ const media = css`
     margin-left: 8.33%;
   }
 `;
-const AnimatedWaitingList = animated(WaitingList);
 
 const Hero = () => {
   const fade = useSpring({ opacity: 1, from: { opacity: 0 } });
@@ -46,8 +46,12 @@ const Hero = () => {
       />
       <SpaceWrapper height="XL" width="M" css={media}>
         <animated.h1 style={fade}>Inspiration is vital</animated.h1>
-        <animated.h2 style={fade}>Receive fresh breeze from the purest places on Earth</animated.h2>
-        <AnimatedWaitingList style={fade} />
+        <animated.h2 style={fade}>
+          Receive fresh breeze from the purest places on Earth
+        </animated.h2>
+        <animated.div style={fade}>
+          <WaitingList />
+        </animated.div>
       </SpaceWrapper>
     </Section>
   );

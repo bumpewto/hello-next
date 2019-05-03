@@ -5,7 +5,7 @@
     "dev-front": "yarn workspace frontend run dev",
     "dev-api": "yarn workspace api run start",
     "start": "yarn dev-front && yarn dev-api",
-    "test": "jest --watchAll"
+    "test": "jest --watch"
   },
   "dependencies": {},
   "license": "ISC",
@@ -28,10 +28,7 @@
     "prettier": "^1.17.0"
   },
   "private": true,
-  "workspaces": [
-    "api/*",
-    "frontend"
-  ],
+  "workspaces": ["api/*", "frontend"],
   "keywords": [],
   "description": ""
 }

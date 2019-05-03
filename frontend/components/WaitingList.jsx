@@ -18,29 +18,30 @@ const StyledForm = styled.form`
 
   font-size: 1.2rem;
 `;
-const WaitingListForm = React.forwardRef(({
-  label, onSubmit, value, onChange,
-}, style) => {
-  React.useImperativeHandle(style, () => ({}));
-  return (
-    <StyledForm onSubmit={onSubmit} style={{ style }}>
-      <Input
-        label={label}
-        placeholder="stevie.kenarban@gmail.com"
-        name="email"
-        value={value}
-        onChange={onChange}
-        type="email"
-        required
-      />
-      <SpaceWrapper height="M">
-        <Button type="submit" value="Submit">
-          Subscribe
-        </Button>
-      </SpaceWrapper>
-    </StyledForm>
-  );
-});
+const WaitingListForm = React.forwardRef(
+  ({ label, onSubmit, value, onChange }, style) => {
+    const innerRef = React.useRef();
+    React.useImperativeHandle(style, () => ({}));
+    return (
+      <StyledForm onSubmit={onSubmit} style={{ innerRef }}>
+        <Input
+          label={label}
+          placeholder="stevie.kenarban@gmail.com"
+          name="email"
+          value={value}
+          onChange={onChange}
+          type="email"
+          required
+        />
+        <SpaceWrapper height="M">
+          <Button type="submit" value="Submit">
+            Subscribe
+          </Button>
+        </SpaceWrapper>
+      </StyledForm>
+    );
+  }
+);
 
 const AnimatedWaitingListForm = animated(WaitingListForm);
 // Actual component
@@ -64,10 +65,10 @@ const WaitingList = () => {
     return setIndex(3);
   });
 
-  const transitions = useTransition(index, p => p, {
+  const transitions = useTransition(index, null, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
-    leave: { opacity: 0 },
+    leave: { opacity: 0 }
   });
 
   const submitSubscribe = async (e, userEmail) => {
@@ -78,7 +79,7 @@ const WaitingList = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: userEmail }),
-        credentials: "include",
+        credentials: "include"
       });
       await setStatus(res.status);
       await setIsSubmit(true);
@@ -122,7 +123,7 @@ const WaitingList = () => {
         onChange={handleChange}
         style={style}
       />
-    ),
+    )
   ];
 
   return (
@@ -131,49 +132,6 @@ const WaitingList = () => {
         const Page = formOptions[item];
         return <Page key={key} style={fade} />;
       })}
-      {/* {transitions.map(({ state, key, fade }) => {
-        if (state) {
-          if (status === 400) {
-            return (
-              <animated.div key={key} style={fade} css="text-align: center;">
-                You&apos;re already registered to the waiting list !
-                <br />
-                (っ^з^)♪♬
-              </animated.div>
-            );
-          }
-          if (status !== 200) {
-            return (
-              <WaitingListForm
-                label={"Sorry, something went wrong... (ಥ﹏ಥ)\nPlease try again"}
-                onSubmit={handleSubmit}
-                value={value}
-                onChange={handleChange}
-                key={key}
-                style={fade}
-              />
-            );
-          }
-          return (
-            <animated.div key={key} style={fade} css="text-align: center;">
-              You&apos;re now registered to the waiting list !
-              <br />
-              (｡◕‿‿◕｡)
-            </animated.div>
-          );
-        }
-
-        return (
-          <WaitingListForm
-            label="Subscribe to the waiting list to be the first to refresh your poor lungs"
-            onSubmit={handleSubmit}
-            value={value}
-            onChange={handleChange}
-            key={key}
-            style={fade}
-          />
-        );
-      })} */}
     </>
   );
 };
