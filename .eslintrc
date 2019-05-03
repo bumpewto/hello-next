@@ -17,9 +17,11 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "jest", "prettier"],
+  "plugins": ["react", "jest", "prettier", "react-hooks"],
   "rules": {
     "quotes": ["error", "double"],
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
