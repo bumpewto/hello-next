@@ -19,6 +19,7 @@
   },
   "plugins": ["react", "jest", "prettier", "react-hooks"],
   "rules": {
+    "implicit-arrow-linebreak": "off",
     "quotes": ["error", "double"],
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "error",
